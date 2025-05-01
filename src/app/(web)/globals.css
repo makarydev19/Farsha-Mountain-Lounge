@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'Milky';
-  src: url('/fonts/Milky.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  src: url('/fonts/Milky-BF656b1e9e88c3a.woff') format('woff');
   font-display: swap;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap');
 
 @layer utilities {
   @keyframes slide-down {
@@ -23,9 +23,13 @@
   }
 }
 
+body {
+  font-family: 'Kanit', sans-serif;
+}
+
 /* Custom font utility */
 .font-milky {
-  font-family: var(--font-milky);
+  font-family: 'Milky', cursive;
 }
 
 /* Body background class */
