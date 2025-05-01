@@ -24,12 +24,6 @@ const Home = () => {
     if (typeof index === 'number') setActiveButton(index)
   }
 
-  const [videoReady, setVideoReady] = useState(false)
-
-  const handleVideoReady = () => {
-    if (!videoReady) setVideoReady(true)
-  }
-
   return (
     <motion.section className='relative min-h-[110vh]'>
       {/* Buttons */}
@@ -85,7 +79,6 @@ const Home = () => {
                 muted
                 loop
                 playsInline
-                onCanPlayThrough={handleVideoReady}
                 className='hidden h-full w-full object-cover md:block'
               />
 
@@ -95,7 +88,6 @@ const Home = () => {
                 muted
                 loop
                 playsInline
-                onCanPlayThrough={handleVideoReady}
                 className='block h-full w-[130%] object-cover md:hidden'
               />
             </div>
@@ -146,7 +138,6 @@ const Home = () => {
                 muted
                 loop
                 playsInline
-                onCanPlayThrough={handleVideoReady}
                 className='h-full w-full object-cover'
               />
             </div>
@@ -174,7 +165,6 @@ const Home = () => {
                 muted
                 loop
                 playsInline
-                onCanPlayThrough={handleVideoReady}
                 className='block h-full w-[130%] object-cover md:hidden'
               />
               <video
@@ -183,7 +173,6 @@ const Home = () => {
                 muted
                 loop
                 playsInline
-                onCanPlayThrough={handleVideoReady}
                 className='hidden h-full w-full object-cover md:block'
               />
             </div>
