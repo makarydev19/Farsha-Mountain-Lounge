@@ -1,0 +1,6 @@
+export { default as Hero } from './hero'
+export { default as About } from './about'
+export { default as History } from './history'
+export { default as Services } from './services'
+export { default as Guidelines } from './guidelines'
+export { default as Gallery } from './gallery'
