@@ -10,7 +10,7 @@ const Hero = () => {
       <div className='absolute inset-0 z-0'>
         <div className='absolute inset-0 z-10 bg-black/30' />
         <video
-          src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746134755/LoungeHori_idzixa.mp4'
+          src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746219150/Lounge_Hori_y2uyyi.mp4'
           autoPlay
           muted
           loop
