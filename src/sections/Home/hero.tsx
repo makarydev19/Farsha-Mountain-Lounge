@@ -8,7 +8,7 @@ const Hero = () => {
     <motion.section className='relative h-screen w-full'>
       {/* Background Video */}
       <div className='absolute inset-0 z-0'>
-        <div className='absolute inset-0 z-10 bg-black/30' />
+        <div className='absolute inset-0 z-10 bg-gradient-to-t from-black/50 via-black/10 to-transparent' />
         <video
           src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746219150/Lounge_Hori_y2uyyi.mp4'
           autoPlay
@@ -21,8 +21,8 @@ const Hero = () => {
       </div>
 
       {/* Centered Content */}
-      <div className='relative z-20 flex h-full w-full flex-col items-center justify-center text-white'>
-        <div className='relative top-8 w-40 lg:top-13 lg:w-60'>
+      <div className='relative z-20 flex h-full w-full flex-col items-center justify-end py-20 text-white'>
+        <div className='relative top-8 w-40 lg:top-12 lg:w-60'>
           <Image
             src='/FarshaProfilePic-removebg-preview (1).png'
             alt='logo'
@@ -31,7 +31,7 @@ const Hero = () => {
             className='img'
           />
         </div>
-        <h1 className='font-milky text-center text-4xl text-nowrap md:text-8xl'>
+        <h1 className='font-milky text-center text-4xl text-nowrap text-red-400 md:text-8xl'>
           Mountain Lounge
         </h1>
       </div>

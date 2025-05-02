@@ -30,9 +30,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <About />
       {showRest && (
         <>
-          <About />
           <History />
           <Services />
           <Guidelines />
