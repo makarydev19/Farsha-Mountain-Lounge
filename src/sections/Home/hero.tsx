@@ -78,6 +78,7 @@ const Home = () => {
                 autoPlay
                 muted
                 loop
+                preload='auto'
                 playsInline
                 className='hidden h-full w-full object-cover md:block'
               />
@@ -87,6 +88,7 @@ const Home = () => {
                 autoPlay
                 muted
                 loop
+                preload='auto'
                 playsInline
                 className='block h-full w-[130%] object-cover md:hidden'
               />
@@ -135,6 +137,7 @@ const Home = () => {
               <video
                 src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746134755/LoungeHori_idzixa.mp4'
                 autoPlay
+                preload='auto'
                 muted
                 loop
                 playsInline
@@ -163,6 +166,7 @@ const Home = () => {
                 src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746134755/LoungeHori_idzixa.mp4'
                 autoPlay
                 muted
+                preload='auto'
                 loop
                 playsInline
                 className='block h-full w-[130%] object-cover md:hidden'
@@ -170,6 +174,7 @@ const Home = () => {
               <video
                 src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746134755/LoungeHori_idzixa.mp4'
                 autoPlay
+                preload='auto'
                 muted
                 loop
                 playsInline
