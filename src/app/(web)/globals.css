@@ -130,11 +130,6 @@ body {
   border-radius: 5%;
 }
 
-.guidelines .glines-name1,
-.guidelines .glines-name2 {
-  color: white;
-}
-
 .guidelines .glines-name1 > p {
   font-size: 0.9rem;
   text-align: center;
@@ -225,7 +220,6 @@ body {
     top 0.35s,
     opacity 0.15s;
   transform-origin: 0 0;
-  font-size: 24px;
   text-transform: uppercase;
   transform: translate(-50%, -50%) rotate(0deg);
 }
@@ -234,7 +228,6 @@ body {
   .guidelines .glines-name1 {
     top: 100%;
     left: 50%;
-    font-size: 32px;
     transform: translate(-20px, -50%) rotate(-90deg);
   }
 }
@@ -296,18 +289,6 @@ body {
 .active .artist-profile-link {
   pointer-events: all;
 } */
-
-@media only screen and (max-width: 450px) {
-  .guidelines .glines-name1 {
-    font-size: 1.1rem;
-  }
-}
-
-@media only screen and (max-width: 360px) {
-  .guidelines .glines-name1 {
-    font-size: 1rem;
-  }
-}
 
 .glines-list li {
   /* Default background image for wide screens */

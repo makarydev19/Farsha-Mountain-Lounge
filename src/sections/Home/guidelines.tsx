@@ -45,14 +45,14 @@ const Guidelines = () => {
   }
 
   return (
-    <section className='guidelines section py-28' id='guidelines'>
+    <section className='guidelines section py-28'>
       <main className='space-y-28'>
-        <div className='relative z-10 mx-auto w-full space-y-3 text-center lg:w-[65%]'>
+        <div className='relative z-10 mx-auto w-full space-y-3 px-5 text-center lg:w-[65%]'>
           <h2 className='text-2xl font-semibold text-red-400 lg:text-3xl'>
             Our Guidelines
           </h2>
           <TextAnimate
-            className='font-milky text-3xl lg:text-5xl'
+            className='font-milky text-5xl'
             animation='blurInUp'
             as={'h1'}
             delay={0.5}
@@ -75,9 +75,9 @@ const Guidelines = () => {
               className={active === i ? 'active' : ''}
               onClick={() => handleItemClick(i)}
             >
-              <h4 className='glines-name1 flex flex-col items-center justify-center gap-3'>
+              <h4 className='glines-name1 font-milky flex flex-col items-center justify-center gap-3 text-xl lg:text-3xl'>
                 {MLguideline.title}
-                <p className=''>
+                <p>
                   <FaChevronDown />
                 </p>
               </h4>
@@ -87,7 +87,7 @@ const Guidelines = () => {
                     <h4 className='glines-name2 font-milky'>
                       {MLguideline.title}
                     </h4>
-                    <p className='text-2xl text-white/80'>
+                    <p className='text-lg text-white/80 lg:text-2xl'>
                       {MLguideline.description}
                     </p>
                   </div>
@@ -99,9 +99,9 @@ const Guidelines = () => {
       </main>
 
       <main className='mt-32 space-y-20'>
-        <div className='relative z-10 mx-auto w-full text-center lg:w-[65%]'>
+        <div className='relative z-10 mx-auto w-full px-5 text-center lg:w-[65%]'>
           <TextAnimate
-            className='font-milky text-3xl text-blue-200 lg:text-5xl'
+            className='font-milky text-5xl text-blue-200'
             animation='blurInUp'
             as={'h1'}
           >
@@ -123,7 +123,7 @@ const Guidelines = () => {
               className={active === i ? 'active' : ''}
               onClick={() => handleItemClick(i)}
             >
-              <h4 className='glines-name1 font-milky flex flex-col items-center justify-center gap-3'>
+              <h4 className='glines-name1 font-milky flex flex-col items-center justify-center gap-3 text-xl lg:text-3xl'>
                 {beachguideline.title}
                 <p>
                   <FaChevronDown />
@@ -135,7 +135,7 @@ const Guidelines = () => {
                     <h4 className='glines-name2 font-milky'>
                       {beachguideline.title}
                     </h4>
-                    <p className='text-2xl text-white/80'>
+                    <p className='text-lg text-white/80 lg:text-2xl'>
                       {beachguideline.description}
                     </p>
                   </div>

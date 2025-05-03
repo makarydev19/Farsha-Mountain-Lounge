@@ -55,7 +55,7 @@ export const guidelinesBeach: Guideline[] = [
     color: '#ffffff',
     title: 'ENTRANCE FEES',
     description:
-      'Adults have an entrance fee of 100 LE per person, towel use included. No entrance fees applied on children'
+      'Adults have an entrance fee of 200 LE per person, towel use included. No entrance fees applied on children'
   },
   {
     id: 3,

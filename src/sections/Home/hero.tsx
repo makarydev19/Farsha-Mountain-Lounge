@@ -21,7 +21,7 @@ const Hero = () => {
       </div>
 
       {/* Centered Content */}
-      <div className='relative z-20 flex h-full w-full flex-col items-center justify-end py-20 text-white'>
+      <div className='relative z-20 flex h-full w-full flex-col items-center justify-end pb-52 text-white lg:pb-20'>
         <div className='relative top-8 w-40 lg:top-12 lg:w-60'>
           <Image
             src='/FarshaProfilePic-removebg-preview (1).png'
@@ -31,7 +31,7 @@ const Hero = () => {
             className='img'
           />
         </div>
-        <h1 className='font-milky text-center text-4xl text-nowrap text-red-400 md:text-8xl'>
+        <h1 className='font-milky text-center text-5xl text-nowrap text-red-400 md:text-8xl'>
           Mountain Lounge
         </h1>
       </div>

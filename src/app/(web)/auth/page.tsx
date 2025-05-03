@@ -76,9 +76,9 @@ const Auth = () => {
           <div className='absolute inset-0 z-10 bg-black/70'></div>
 
           {/* Text */}
-          <div className='absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2'>
+          <div className='absolute top-1/2 left-1/2 z-20 w-full -translate-x-1/2 -translate-y-1/2'>
             <TextAnimate
-              className='font-milky text-center text-8xl font-bold text-blue-100 md:text-8xl'
+              className='font-milky text-center text-5xl font-bold text-blue-100 md:text-8xl'
               animation='blurInUp'
               by='character'
               duration={1}
