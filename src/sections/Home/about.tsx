@@ -7,13 +7,13 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const images = [
-  '/assets/background5.jpg',
   '/assets/gallery-13.jpg',
+  '/assets/IMG22.jpg',
   '/assets/gallery-12.jpg',
   '/assets/gallery-5.jpg',
   '/assets/farshaLounge8.jpg',
-  '/assets/farshaLounge6.jpg',
-  '/assets/background4(2).jpg'
+  '/assets/IMG11.jpg',
+  '/assets/farshaLounge6.jpg'
 ]
 
 export default function AboutUsSection() {

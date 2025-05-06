@@ -68,22 +68,6 @@ body {
   @apply h-full w-full object-cover;
 }
 
-/* =================================== 
-# Social Links 
-=================================== */
-
-.social-links {
-  @apply flex justify-center space-x-4;
-}
-
-.social-link {
-  @apply flex h-12 w-12 items-center justify-center rounded-full border-2 border-gray-400 text-2xl transition-all duration-200 ease-in-out;
-}
-
-.social-link:hover {
-  @apply bg-red-600 text-black;
-}
-
 .H-Line hr,
 .H-Line2 hr {
   @apply my-12 border-t-2 border-gray-300;
@@ -98,15 +82,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-md bg-red-500;
+  @apply rounded-md bg-red-400;
 }
 
 .sidebar:hover::-webkit-scrollbar-thumb {
   @apply bg-white;
-}
-
-.guideline-text {
-  font-family: var(--guideline-font);
 }
 
 .bio {
@@ -279,16 +259,10 @@ body {
     padding: 40px;
   }
 }
+
 .active .guidelines-content .inner {
   opacity: 1;
 }
-
-/* .artist-profile-link {
-  pointer-events: none;
-}
-.active .artist-profile-link {
-  pointer-events: all;
-} */
 
 .glines-list li {
   /* Default background image for wide screens */

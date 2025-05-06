@@ -49,25 +49,25 @@ const Footer = () => {
   return (
     <motion.section
       ref={ref}
-      className='rounded-t-3xl bg-black/60 pt-28 pb-5 text-white'
+      className='rounded-t-4xl bg-black/60 pt-28 pb-5 text-white'
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
     >
       <div className='mx-auto px-4'>
         <div className='mb-20'>
-          <h2 className='font-milky mb-6 text-center text-5xl font-bold text-blue-300'>
+          <h2 className='font-milky mb-6 text-center text-5xl font-bold text-red-400'>
             Contact Us
           </h2>
           {!submitted ? (
             <form
               onSubmit={handleSubmit}
-              className='mx-auto w-full space-y-4 lg:w-4/5'
+              className='mx-auto w-full space-y-4 lg:w-3/5'
             >
               <div className='grid w-full grid-cols-1 gap-x-5 gap-y-4'>
                 <div>
                   <label
                     htmlFor='name'
-                    className='text-base font-medium text-gray-900 dark:text-gray-100'
+                    className='text-base font-medium text-white dark:text-gray-100'
                   >
                     Your name
                   </label>
@@ -78,7 +78,7 @@ const Footer = () => {
                       onChange={e => setCurrentName(e.target.value)}
                       placeholder='Name'
                       required
-                      className='block w-full rounded-md border border-gray-200 bg-white px-4 py-4 text-black placeholder-gray-500 caret-blue-600 transition-all duration-200 focus:border-blue-600 focus:outline-none dark:border-zinc-800 dark:bg-zinc-900'
+                      className='block w-full rounded-md border border-zinc-800 bg-zinc-900 px-4 py-4 text-white placeholder-gray-500 caret-red-500 transition-all duration-200 focus:border-red-400 focus:outline-none'
                     />
                   </div>
                 </div>
@@ -97,7 +97,7 @@ const Footer = () => {
                       onChange={e => setCurrentMessage(e.target.value)}
                       placeholder='Message'
                       required
-                      className='block w-full rounded-md border border-gray-200 bg-white px-4 py-4 text-black placeholder-gray-500 caret-blue-600 transition-all duration-200 focus:border-blue-600 focus:outline-none dark:border-zinc-800 dark:bg-zinc-900'
+                      className='block w-full rounded-md border border-zinc-800 bg-zinc-900 px-4 py-4 text-white placeholder-gray-500 caret-red-400 transition-all duration-200 focus:border-red-400 focus:outline-none'
                     />
                   </div>
                 </div>
@@ -117,7 +117,7 @@ const Footer = () => {
                       onChange={e => setCurrentEmail(e.target.value)}
                       placeholder='Email'
                       required
-                      className='block w-full rounded-md border border-gray-200 bg-white px-4 py-4 text-black placeholder-gray-500 caret-blue-600 transition-all duration-200 focus:border-blue-600 focus:outline-none dark:border-zinc-800 dark:bg-zinc-900'
+                      className='block w-full rounded-md border border-zinc-800 bg-zinc-900 px-4 py-4 text-white placeholder-gray-500 caret-red-400 transition-all duration-200 focus:border-red-400 focus:outline-none'
                     />
                   </div>
                 </div>
@@ -125,7 +125,7 @@ const Footer = () => {
               <div className='sm:col-span-2'>
                 <button
                   type='submit'
-                  className='font-milky w-full cursor-pointer rounded border border-black bg-blue-400 py-4 text-2xl font-bold tracking-widest text-black transition hover:border-blue-100 hover:bg-black hover:text-white'
+                  className='font-milky w-full cursor-pointer rounded border border-black bg-red-400 py-4 text-2xl font-bold tracking-widest text-black transition hover:border-blue-100 hover:bg-black hover:text-white'
                 >
                   Submit
                 </button>
@@ -141,9 +141,9 @@ const Footer = () => {
 
       <motion.div className='space-y-6 text-center'>
         <div>
-          <h2 className='font-milky text-7xl lg:text-6xl'>Follow Us</h2>
+          <h2 className='font-milky text-5xl lg:text-6xl'>Follow Us</h2>
         </div>
-        <div className='flex justify-center space-x-10 text-5xl lg:text-5xl'>
+        <div className='flex justify-center space-x-10 text-4xl lg:text-5xl'>
           <motion.a
             href='https://www.facebook.com/FarshaMountainLounge/'
             whileHover={{ scale: 1.1 }}
@@ -180,7 +180,7 @@ const Footer = () => {
             <div className='mx-auto w-40'>
               <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                 <Image
-                  src='/assets/Farsha_M Logo_page-0001.jpg'
+                  src='/Farsha_M_Logo_page-0001-removebg.png'
                   alt='Farsha Logo'
                   width={160}
                   height={160}

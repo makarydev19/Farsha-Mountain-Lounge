@@ -65,7 +65,7 @@ const Auth = () => {
         <div className='relative h-full w-full'>
           <Image
             className='img'
-            src='/assets/beachCover.jpg'
+            src='/assets/BEACHbg.jpg'
             alt='cover'
             width={1000}
             height={1000}
@@ -78,12 +78,31 @@ const Auth = () => {
           {/* Text */}
           <div className='absolute top-1/2 left-1/2 z-20 w-full -translate-x-1/2 -translate-y-1/2'>
             <TextAnimate
-              className='font-milky text-center text-5xl font-bold text-blue-100 md:text-8xl'
-              animation='blurInUp'
+              className='font-milky text-center text-3xl font-bold text-blue-100 md:text-4xl'
+              animation='slideUp'
+              by='word'
+              duration={1}
+              delay={0.5}
+            >
+              Reservations
+            </TextAnimate>
+            <TextAnimate
+              className='font-milky pb-4 text-center text-4xl font-bold text-blue-100 md:text-7xl'
+              animation='blurIn'
               by='character'
               duration={1}
+              delay={1}
             >
               Coming Soon
+            </TextAnimate>
+            <TextAnimate
+              animation='blurIn'
+              by='character'
+              duration={1}
+              delay={1.5}
+              className='font-milky text-center text-5xl text-nowrap text-blue-300 md:text-8xl'
+            >
+              Beach Lounge
             </TextAnimate>
           </div>
         </div>

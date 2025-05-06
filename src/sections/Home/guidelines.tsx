@@ -1,39 +1,27 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa6'
-import { motion, useAnimation } from 'framer-motion'
+import { motion, useAnimation, useInView } from 'framer-motion'
 // import { useInView } from 'react-intersection-observer'
 import { guidelinesML, guidelinesBeach } from '../../data/data' // Adjust if your path is different
 import { Guideline } from '@/types/types' // Import your Guideline type
 import { TextAnimate } from '@/src/components/ui/TextAnimate'
 
 const Guidelines = () => {
+  const sectionRef = useRef(null)
+  const controls = useAnimation()
+  const inView = useInView(sectionRef, { once: true })
+  const beachRef = useRef(null)
+  const controlsBeachList = useAnimation()
+  const inViewBeach = useInView(beachRef, { once: true })
   const [active, setActive] = useState<number | null>(null)
-  // const [refML, inViewML] = useInView()
-  // const [refBeach, inViewBeach] = useInView()
   const controlsML = useAnimation()
   const controlsBeach = useAnimation()
 
   const handleItemClick = (index: number) => {
     setActive(index === active ? null : index)
   }
-
-  // useEffect(() => {
-  //   if (inViewML) {
-  //     controlsML.start('visible')
-  //   } else {
-  //     controlsML.start('hidden')
-  //   }
-  // }, [controlsML, inViewML])
-
-  // useEffect(() => {
-  //   if (inViewBeach) {
-  //     controlsBeach.start('visible')
-  //   } else {
-  //     controlsBeach.start('hidden')
-  //   }
-  // }, [controlsBeach, inViewBeach])
 
   const listItemVariants = {
     hidden: { opacity: 0, y: 100 },
@@ -44,9 +32,27 @@ const Guidelines = () => {
     return typeof img === 'string' ? img : img.src
   }
 
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        clipPath: 'circle(150% at 50% 50%)',
+        transition: { duration: 2, ease: 'easeInOut' }
+      })
+    }
+  }, [inView, controls])
+
+  useEffect(() => {
+    if (inViewBeach) {
+      controlsBeachList.start({
+        clipPath: 'circle(150% at 50% 50%)',
+        transition: { duration: 2, ease: 'easeInOut' }
+      })
+    }
+  }, [inViewBeach, controlsBeachList])
+
   return (
     <section className='guidelines section py-28'>
-      <main className='space-y-28'>
+      <main className='space-y-10'>
         <div className='relative z-10 mx-auto w-full space-y-3 px-5 text-center lg:w-[65%]'>
           <h2 className='text-2xl font-semibold text-red-400 lg:text-3xl'>
             Our Guidelines
@@ -61,7 +67,12 @@ const Guidelines = () => {
           </TextAnimate>
         </div>
 
-        <div className='glines-list shadow-2xl shadow-black'>
+        <motion.div
+          ref={sectionRef}
+          initial={{ clipPath: 'circle(0% at 50% 50%)' }}
+          animate={controls}
+          className='glines-list overflow-hidden shadow-2xl shadow-black'
+        >
           {guidelinesML.map((MLguideline: Guideline, i: number) => (
             <motion.li
               key={`ml-${i}`}
@@ -69,7 +80,6 @@ const Guidelines = () => {
               style={{
                 backgroundImage: `url(${getImageUrl(MLguideline.img)})`
               }}
-              // initial='hidden'
               animate={controlsML}
               custom={i}
               className={active === i ? 'active' : ''}
@@ -95,10 +105,10 @@ const Guidelines = () => {
               </div>
             </motion.li>
           ))}
-        </div>
+        </motion.div>
       </main>
 
-      <main className='mt-32 space-y-20'>
+      <main className='mt-40 space-y-10'>
         <div className='relative z-10 mx-auto w-full px-5 text-center lg:w-[65%]'>
           <TextAnimate
             className='font-milky text-5xl text-blue-200'
@@ -109,12 +119,16 @@ const Guidelines = () => {
           </TextAnimate>
         </div>
 
-        <div className='glines-list shadow-2xl shadow-black'>
+        <motion.div
+          ref={beachRef}
+          initial={{ clipPath: 'circle(0% at 50% 50%)' }}
+          animate={controlsBeachList}
+          className='glines-list overflow-hidden shadow-2xl shadow-black'
+        >
           {guidelinesBeach.map((beachguideline: Guideline, i: number) => (
             <motion.li
               key={`beach-${i}`}
               variants={listItemVariants}
-              // initial='hidden'
               animate={controlsBeach}
               custom={i}
               style={{
@@ -143,7 +157,7 @@ const Guidelines = () => {
               </div>
             </motion.li>
           ))}
-        </div>
+        </motion.div>
       </main>
     </section>
   )

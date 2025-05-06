@@ -18,7 +18,7 @@ const Header = () => {
         navItems={navItems}
         logo={
           <Image
-            src='/FarshaProfilePic.png'
+            src='/FarshaProfilePic-removebg-preview (1).png'
             alt='Logo'
             width={50}
             height={50}

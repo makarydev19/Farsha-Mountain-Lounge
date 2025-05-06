@@ -6,19 +6,19 @@ import Image from 'next/image'
 
 const historyData = [
   {
-    image: '/assets/farshaLounge1.jpg',
+    image: '/assets/IMG3.jpg',
     title: 'Our Origins',
     content:
       'Farsha started as a small antique collection nestled in the heart of Sinai, capturing the spirit of Bedouin tradition and desert mystique.'
   },
   {
-    image: '/assets/history5.jpg',
+    image: '/assets/IMG5.jpg',
     title: 'Evolution Over Time',
     content:
       'Over the years, we evolved into a one-of-a-kind destination, harmonizing ancient relics with stunning Red Sea views and ambient vibes.'
   },
   {
-    image: '/assets/farshaLounge8.jpg',
+    image: '/assets/IMG4.jpg',
     title: 'The Farsha Experience',
     content:
       'Every corner of Farsha tells a story. From handpicked antiques to cozy lounges, our mission is to bring history and hospitality together.'
