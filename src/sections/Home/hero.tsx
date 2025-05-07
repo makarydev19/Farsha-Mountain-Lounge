@@ -1,11 +1,8 @@
-'use client'
-
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <motion.section className='relative h-screen w-full'>
+    <section className='relative h-screen w-full'>
       {/* Background Videos */}
       <div className='absolute inset-0 z-0'>
         {/* Overlay gradient */}
@@ -16,6 +13,7 @@ const Hero = () => {
           src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746652595/ptzbyi4ej1odjlq5nrgn.mp4'
           autoPlay
           muted
+          poster='../../../assets/DJI_20241217162508_0633_D.JPG'
           loop
           preload='auto'
           playsInline
@@ -26,6 +24,7 @@ const Hero = () => {
         <video
           src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746652737/aqraovp1gvobcehlhc4p.mp4'
           autoPlay
+          poster='../../../assets/DJI_20241217162508_0633_D.JPG'
           muted
           loop
           preload='auto'
@@ -49,7 +48,7 @@ const Hero = () => {
           Mountain Lounge
         </h1>
       </div>
-    </motion.section>
+    </section>
   )
 }
 
