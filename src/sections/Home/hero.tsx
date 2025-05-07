@@ -6,17 +6,31 @@ import { motion } from 'framer-motion'
 const Hero = () => {
   return (
     <motion.section className='relative h-screen w-full'>
-      {/* Background Video */}
+      {/* Background Videos */}
       <div className='absolute inset-0 z-0'>
+        {/* Overlay gradient */}
         <div className='absolute inset-0 z-10 bg-gradient-to-t from-black/50 via-black/10 to-transparent' />
+
+        {/* Desktop Video */}
         <video
-          src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746219150/Lounge_Hori_y2uyyi.mp4'
+          src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746652595/ptzbyi4ej1odjlq5nrgn.mp4'
           autoPlay
           muted
           loop
           preload='auto'
           playsInline
-          className='h-full w-full object-cover'
+          className='hidden h-full w-full object-cover lg:block'
+        />
+
+        {/* Mobile Video */}
+        <video
+          src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746652737/aqraovp1gvobcehlhc4p.mp4'
+          autoPlay
+          muted
+          loop
+          preload='auto'
+          playsInline
+          className='block h-full w-full object-cover lg:hidden'
         />
       </div>
 
