@@ -55,7 +55,7 @@ export default function FloatingNav({
             exit={{ opacity: 0, y: -100 }}
             transition={{ duration: 0.3 }}
             className={cn(
-              'fixed inset-x-0 top-10 z-[5000] mx-auto flex w-[95%] items-center justify-between gap-6 rounded-full border border-white/[0.2] bg-black px-5 py-1 shadow-md lg:w-[35%] lg:px-6',
+              'fixed inset-x-0 top-10 z-[5000] mx-auto flex w-[98%] items-center justify-between gap-6 rounded-full border border-white/[0.2] bg-black px-5 py-1 shadow-md lg:w-[35%] lg:px-6',
               className
             )}
           >
