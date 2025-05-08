@@ -1,27 +1,16 @@
-'use client'
-
-import { FloatingNav } from '../ui/floating-navbar'
-import { IconHome } from '@tabler/icons-react'
 import Image from 'next/image'
+import { Navbar } from '../ui'
 
 const Header = () => {
-  const navItems = [
-    {
-      name: 'Home',
-      link: '/',
-      icon: <IconHome className='h-4 w-4 text-neutral-500 dark:text-white' />
-    }
-  ]
   return (
     <header className='relative w-full'>
-      <FloatingNav
-        navItems={navItems}
+      <Navbar
         logo={
           <Image
             src='/FarshaProfilePic-removebg-preview (1).png'
             alt='Logo'
-            width={50}
-            height={50}
+            width={60}
+            height={60}
             className='img'
           />
         }

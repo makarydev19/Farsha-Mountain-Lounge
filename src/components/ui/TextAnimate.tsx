@@ -297,7 +297,7 @@ const defaultItemAnimationVariants: Record<
   }
 }
 
-export function TextAnimate({
+export default function TextAnimate({
   children,
   delay = 0,
   duration = 0.3,

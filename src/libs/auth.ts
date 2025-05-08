@@ -1,5 +1,5 @@
 import { NextAuthOptions } from 'next-auth'
-import { SanityAdapter, SanityCredentials } from 'next-auth-sanity'
+import { SanityAdapter } from 'next-auth-sanity'
 import GoogleProvider from 'next-auth/providers/google'
 
 import sanityClient from './sanity'
@@ -9,8 +9,7 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
-    }),
-    SanityCredentials(sanityClient)
+    })
   ],
   session: {
     strategy: 'jwt'
@@ -20,18 +19,20 @@ export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     session: async ({ session, token }) => {
-      const userEmail = token.email
+      if (!token?.email) return session
+
       const userIdObj = await sanityClient.fetch<{ _id: string }>(
         `*[_type == "user" && email == $email][0] {
-            _id
-        }`,
-        { email: userEmail }
+        _id
+      }`,
+        { email: token.email }
       )
+
       return {
         ...session,
         user: {
           ...session.user,
-          id: userIdObj._id
+          id: userIdObj?._id || null
         }
       }
     }

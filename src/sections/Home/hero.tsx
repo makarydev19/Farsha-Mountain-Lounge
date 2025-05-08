@@ -13,7 +13,6 @@ const Hero = () => {
           src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746652595/ptzbyi4ej1odjlq5nrgn.mp4'
           autoPlay
           muted
-          poster='../../../assets/DJI_20241217162508_0633_D.JPG'
           loop
           preload='auto'
           playsInline
@@ -24,7 +23,6 @@ const Hero = () => {
         <video
           src='https://res.cloudinary.com/dfksduzaw/video/upload/v1746652737/aqraovp1gvobcehlhc4p.mp4'
           autoPlay
-          poster='../../../assets/DJI_20241217162508_0633_D.JPG'
           muted
           loop
           preload='auto'

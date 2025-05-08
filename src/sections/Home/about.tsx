@@ -1,6 +1,6 @@
 'use client'
 
-import { TextAnimate } from '@/src/components/ui/TextAnimate'
+import { TextAnimate } from '@/src/components/ui'
 import { useWindowSize } from '@/src/hooks/useWindowSize'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'

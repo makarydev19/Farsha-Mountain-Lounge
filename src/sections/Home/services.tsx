@@ -9,7 +9,7 @@ import Seating from '@/public/assets/sitting (2).png'
 import Alcohol from '@/public/assets/wine.png'
 import WaterFront from '@/public/assets/sunset.png'
 import TableService from '@/public/assets/reservation (1).png'
-import { TextAnimate } from '@/src/components/ui/TextAnimate'
+import { TextAnimate } from '@/src/components/ui'
 
 const Services = () => {
   const [ref, inView] = useInView()

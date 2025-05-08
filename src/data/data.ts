@@ -1,6 +1,6 @@
 // data.ts
 
-import { Link, Guideline, GalleryItem, HistoryItem } from '@/types/types'
+import { Link, Guideline, GalleryItem, HistoryData } from '@/types/types'
 
 // Direct path to assets in the public directory
 export const links: Link[] = [
@@ -81,33 +81,23 @@ export const gallery: GalleryItem[] = [
   { id: 11, img: '/assets/beach6.jpg' }
 ]
 
-export const history: HistoryItem[] = [
+export const historyData: HistoryData[] = [
   {
-    id: 1,
-    img: '/assets/history2.jpg',
-    title: 'Farsha... Its sweetness in its simplicity',
-    description:
-      'The name quickly caught on and became synonymous with my sitting areas. People would come to Sharm El-Sheikh and ask where they could find Farsha. My friend would point them in my direction, and they would spend their afternoons lounging on my comfortable cushions and mats, enjoying the beautiful view of the Red Sea. As time went on, I became more than just a sitting area. I started offering shisha, drinks, and snacks to my guests. My name became well-known among the locals, and I became a landmark in the city. I am proud to have made a name for myself in Sharm El-Sheikh, and I will continue to welcome guests from all over the world to experience the simplicity and tranquility of Farsha.'
+    image: '/assets/IMG3.jpg',
+    title: 'Our Origins',
+    content:
+      'Farsha started as a small antique collection nestled in the heart of Sinai, capturing the spirit of Bedouin tradition and desert mystique.'
   },
   {
-    id: 2,
-    img: '/assets/IMG_0258.jpg',
-    title: 'My Antiques',
-    description:
-      'Recognizing the value of antiques, I decided that all my components would be various antiques, including everything old and valuable. My friend traveled across cities, villages, and deserts, collecting these antiques. Periodically, he brings a selection of these antiques and arranges them harmoniously... My goal is to bring joy to people in a simple manner. I remain happy when you feel the place as you would your drink or the food served to you.'
+    image: '/assets/IMG5.jpg',
+    title: 'Evolution Over Time',
+    content:
+      'Over the years, we evolved into a one-of-a-kind destination, harmonizing ancient relics with stunning Red Sea views and ambient vibes.'
   },
   {
-    id: 3,
-    img: '/assets/history4.jpg',
-    title: 'My Components',
-    description:
-      "Key components include an original goat-hair tent from my hometown of Rafah and El-Arish, alongside various-shaped trays repurposed as tables, sourced from rural areas. Additionally, there are tools, bottles, motorcycles, cars, paintings, and antique frames, each with its own story. Noteworthy is an antique door my friend bought, originally from a famous church. My fame stems from our friendly and polite service, diverse sessions, and the incorporation of beloved proverbs like Patience is the key to relief, reflecting my friend's vision for the future."
-  },
-  {
-    id: 4,
-    img: '/assets/history6.jpg',
-    title: 'And the dream continues',
-    description:
-      'I am Farsha, an organized randomness... an expression coined by my friend Alfred, a lover of nature and beauty, who emphasizes that he has not yet achieved his main dream.'
+    image: '/assets/IMG4.jpg',
+    title: 'The Farsha Experience',
+    content:
+      'Every corner of Farsha tells a story. From handpicked antiques to cozy lounges, our mission is to bring history and hospitality together.'
   }
 ]

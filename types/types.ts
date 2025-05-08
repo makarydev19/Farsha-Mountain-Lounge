@@ -18,9 +18,31 @@ export type GalleryItem = {
   img: string | StaticImageData
 }
 
-export type HistoryItem = {
-  id: number
-  img: string | StaticImageData
+export type HistoryData = {
+  image: string | StaticImageData
   title: string
-  description: string
+  content: string
+}
+
+export type Field = {
+  id: string
+  label: string
+  placeholder: string
+  type:
+    | 'text'
+    | 'textarea'
+    | 'email'
+    | 'tel'
+    | 'date'
+    | 'time'
+    | 'number'
+    | 'password'
+  required?: boolean
+}
+
+export type SignUpPayload = {
+  email: string
+  password: string
+  name?: string
+  image?: string
 }

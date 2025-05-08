@@ -11,6 +11,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <head>
+        <link
+          rel='preload'
+          as='video'
+          href='https://res.cloudinary.com/dfksduzaw/video/upload/v1746652595/ptzbyi4ej1odjlq5nrgn.mp4'
+          type='video/mp4'
+        />
+        <link
+          rel='preload'
+          as='video'
+          href='https://res.cloudinary.com/dfksduzaw/video/upload/v1746652737/aqraovp1gvobcehlhc4p.mp4'
+          type='video/mp4'
+        />
+      </head>
       <body className='body-bg font-normal antialiased'>
         <NextAuthProvider>
           <Toast />

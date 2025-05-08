@@ -3,10 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa6'
 import { motion, useAnimation, useInView } from 'framer-motion'
-// import { useInView } from 'react-intersection-observer'
-import { guidelinesML, guidelinesBeach } from '../../data/data' // Adjust if your path is different
-import { Guideline } from '@/types/types' // Import your Guideline type
-import { TextAnimate } from '@/src/components/ui/TextAnimate'
+import { guidelinesML, guidelinesBeach } from '../../data/data'
+import { Guideline } from '@/types/types'
+import { TextAnimate } from '@/src/components/ui'
 
 const Guidelines = () => {
   const sectionRef = useRef(null)

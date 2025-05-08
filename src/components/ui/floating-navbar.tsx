@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import {
   motion,
   AnimatePresence,
@@ -9,75 +9,129 @@ import {
 } from 'framer-motion'
 import { cn } from '@/src/libs/utils'
 import Link from 'next/link'
+import { FaSignInAlt, FaSignOutAlt, FaUserCircle } from 'react-icons/fa'
+import Image from 'next/image'
+import { useSession, signOut, signIn } from 'next-auth/react'
 
-type NavItem = {
-  name: string
-  link: string
-  icon?: React.ReactNode
-}
-
-export const FloatingNav = ({
-  navItems,
+export default function FloatingNav({
   className,
   logo
 }: {
-  navItems: NavItem[]
   className?: string
   logo?: React.ReactNode
-}) => {
+}) {
   const { scrollYProgress } = useScroll()
   const [visible, setVisible] = useState(false)
+  const [showUserPanel, setShowUserPanel] = useState(false)
+  const { data: session } = useSession()
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useMotionValueEvent(scrollYProgress, 'change', current => {
     if (typeof current === 'number') {
       const previous = scrollYProgress.getPrevious()
       const direction = current - (previous ?? 0)
-
-      if (current < 0.05) {
-        setVisible(false)
-      } else {
-        setVisible(direction < 0)
-      }
+      setVisible(current >= 0.05 && direction < 0)
     }
   })
 
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    setShowUserPanel(true)
+  }
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setShowUserPanel(false)
+    }, 300) // 300ms delay
+  }
+
   return (
-    <AnimatePresence mode='wait'>
-      <motion.div
-        initial={{ opacity: 1, y: -100 }}
-        animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
-        transition={{ duration: 0.2 }}
-        className={cn(
-          'fixed inset-x-0 top-10 z-[5000] mx-auto flex w-[90%] items-center justify-between gap-6 space-x-4 rounded-full border border-transparent bg-white px-5 py-1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] lg:w-[30%] lg:px-6 dark:border-white/[0.2] dark:bg-black',
-          className
-        )}
-      >
-        {logo && (
-          <Link
-            href='/'
-            className='flex cursor-pointer items-center justify-center'
+    <>
+      <AnimatePresence mode='wait'>
+        {visible && (
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ opacity: 0, y: -100 }}
+            transition={{ duration: 0.3 }}
+            className={cn(
+              'fixed inset-x-0 top-10 z-[5000] mx-auto flex w-[95%] items-center justify-between gap-6 rounded-full border border-white/[0.2] bg-black px-5 py-1 shadow-md lg:w-[35%] lg:px-6',
+              className
+            )}
           >
-            {logo}
-          </Link>
+            <div className='flex items-center gap-x-5'>
+              {logo && (
+                <Link
+                  href='/'
+                  className='flex w-20 items-center justify-center'
+                >
+                  {logo}
+                </Link>
+              )}
+              <div
+                className='relative w-10'
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                {session?.user?.image ? (
+                  <Image
+                    src={session.user.image}
+                    alt={session.user.name || 'User'}
+                    width={50}
+                    height={50}
+                    className='img rounded-full'
+                  />
+                ) : (
+                  <FaUserCircle className='size-7 text-white' />
+                )}
+              </div>
+            </div>
+
+            <div className='flex items-center justify-end gap-5'>
+              <button className='relative rounded-full border border-neutral-200 px-4 py-2 text-base font-medium text-black dark:border-white/[0.2] dark:text-white'>
+                <Link href='/reservations'>
+                  <span>Beach Reservation</span>
+                  <span className='absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-red-500 to-transparent' />
+                </Link>
+              </button>
+            </div>
+          </motion.div>
         )}
-        <div className='flex items-center justify-end gap-5'>
-          {navItems.map((navItem, idx) => (
-            <a
-              key={`link-${idx}`}
-              href={navItem.link}
-              className='relative flex cursor-pointer items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300'
-            >
-              <span className='hidden text-sm'>{navItem.name}</span>
-            </a>
-          ))}
-          <button className='relative cursor-pointer rounded-full border border-neutral-200 px-4 py-2 text-sm font-medium text-black dark:border-white/[0.2] dark:text-white'>
-            <Link href='/auth'>
-              <span>Beach Reservation</span>
-              <span className='absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-red-500 to-transparent' />
-            </Link>
-          </button>
-        </div>
-      </motion.div>
-    </AnimatePresence>
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {visible && showUserPanel && (
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.3 }}
+            className='fixed top-[111px] left-[36%] z-[4000] w-fit -translate-x-1/2 rounded-b-3xl border border-zinc-600 bg-zinc-950 px-6 pt-3 pb-2 text-center text-white shadow-xl lg:left-[41%]'
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            {session?.user ? (
+              <div className='flex flex-col items-center gap-1'>
+                <p className='font-semibold'>{session.user.name}</p>
+                <button
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                  className='flex cursor-pointer items-center gap-2 rounded text-white hover:text-red-400'
+                >
+                  <FaSignOutAlt /> Sign Out
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => signIn('google', { callbackUrl: '/' })}
+                className='flex cursor-pointer items-center gap-2 text-white hover:text-red-400'
+              >
+                <FaSignInAlt />
+                <p>Sign In</p>
+              </button>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
