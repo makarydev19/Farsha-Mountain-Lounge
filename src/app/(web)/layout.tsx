@@ -33,6 +33,7 @@ export default function RootLayout({
           type='video/mp4'
           crossOrigin='anonymous'
         />
+        <link rel='icon' href='/FarshaProfilePic.png' />
       </head>
       <body className='body-bg font-normal antialiased'>
         <NextAuthProvider>
