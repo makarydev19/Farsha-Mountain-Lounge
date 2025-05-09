@@ -7,10 +7,10 @@ const Header = () => {
       <Navbar
         logo={
           <Image
-            src='/FarshaProfilePic-removebg-preview (1).png'
+            src='/FarshaLogo.png'
             alt='Logo'
-            width={60}
-            height={60}
+            width={100}
+            height={100}
             className='img'
           />
         }

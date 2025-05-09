@@ -59,11 +59,11 @@ export default function FloatingNav({
               className
             )}
           >
-            <div className='flex items-center gap-x-5'>
+            <div className='flex items-center gap-x-3'>
               {logo && (
                 <Link
                   href='/'
-                  className='flex w-20 items-center justify-center'
+                  className='flex w-24 items-center justify-center py-2 lg:w-28'
                 >
                   {logo}
                 </Link>
