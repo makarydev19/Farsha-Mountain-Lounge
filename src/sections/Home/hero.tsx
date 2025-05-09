@@ -16,13 +16,22 @@ const Hero = () => {
       <div className='absolute inset-0 z-0'>
         {/* Fallback image while video is loading */}
         {!videoReady && (
-          <Image
-            src='/assets/DJI_20241217162508_0633_D.JPG'
-            alt='Fallback'
-            fill
-            priority
-            className='rounded-b-4xl object-cover'
-          />
+          <>
+            <Image
+              src='/assets/DJI_20241217162508_0633_D.JPG'
+              alt='Fallback'
+              fill
+              priority
+              className='hidden rounded-b-4xl object-cover lg:block'
+            />
+            <Image
+              src='/assets/VertCover.png'
+              alt='Fallback'
+              fill
+              priority
+              className='block rounded-b-4xl object-cover lg:hidden'
+            />
+          </>
         )}
 
         {/* Loading Overlay */}
