@@ -70,7 +70,7 @@ const Hero = () => {
       </div>
 
       {/* Foreground content */}
-      <div className='relative z-30 flex h-full w-full flex-col items-center justify-end pb-20 text-white lg:pb-14'>
+      <div className='relative z-30 flex h-full w-full flex-col items-center justify-end pb-32 text-white lg:pb-14'>
         <div className='relative top-1 w-52 lg:top-2 lg:w-72'>
           <Image
             src='/FarshaLogo.png'
