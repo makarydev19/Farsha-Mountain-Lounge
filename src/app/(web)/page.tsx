@@ -1,6 +1,6 @@
 'use client'
 
-import { Hero } from '@/src/sections/Home'
+import { Hero, Reviews } from '@/src/sections/Home'
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 
@@ -38,6 +38,7 @@ export default function Home() {
           <Guidelines />
         </>
       )}
+      <Reviews />
     </>
   )
 }

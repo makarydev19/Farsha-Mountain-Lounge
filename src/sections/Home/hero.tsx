@@ -39,7 +39,7 @@ const Hero = () => {
           <div className='absolute inset-0 z-20 flex items-center justify-center rounded-b-4xl bg-black/50'>
             <div className='text-center text-white'>
               <div className='mx-auto mb-2 h-10 w-10 animate-spin rounded-full border-4 border-white border-t-transparent' />
-              <p className='text-sm'>Loading video...</p>
+              {/* <p className='text-sm'>Loading video...</p> */}
             </div>
           </div>
         )}
@@ -87,6 +87,7 @@ const Hero = () => {
             width={200}
             height={200}
             className='img'
+            priority
           />
         </div>
         <h1 className='font-milky text-center text-5xl text-nowrap text-red-400 md:text-8xl'>

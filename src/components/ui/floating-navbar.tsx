@@ -12,6 +12,7 @@ import Link from 'next/link'
 import { FaSignInAlt, FaSignOutAlt, FaUserCircle } from 'react-icons/fa'
 import Image from 'next/image'
 import { useSession, signOut, signIn } from 'next-auth/react'
+import { TbBeach } from 'react-icons/tb'
 
 export default function FloatingNav({
   className,
@@ -55,7 +56,7 @@ export default function FloatingNav({
             exit={{ opacity: 0, y: -100 }}
             transition={{ duration: 0.3 }}
             className={cn(
-              'fixed inset-x-0 top-10 z-[5000] mx-auto flex w-[98%] items-center justify-between gap-6 rounded-full border border-white/[0.2] bg-black px-5 py-1 shadow-md lg:w-[35%] lg:px-6',
+              'fixed inset-x-0 top-10 z-[5000] mx-auto flex w-[98%] items-center justify-between gap-6 rounded-full border border-white/[0.2] bg-black px-5 py-2 shadow-md lg:w-[35%] lg:px-6',
               className
             )}
           >
@@ -88,9 +89,12 @@ export default function FloatingNav({
             </div>
 
             <div className='flex items-center justify-end gap-5'>
-              <button className='relative rounded-full border border-neutral-200 px-4 py-2 text-base font-medium text-black dark:border-white/[0.2] dark:text-white'>
+              <button className='relative rounded-3xl border border-neutral-200 px-4 py-2 text-base font-medium text-black dark:border-white/[0.2] dark:text-white'>
                 <Link href='/reservations'>
-                  <span>Beach Reservation</span>
+                  <span className='flex items-center gap-1'>
+                    Reservation
+                    <TbBeach className='text-3xl' />
+                  </span>
                   <span className='absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-red-500 to-transparent' />
                 </Link>
               </button>
@@ -106,7 +110,7 @@ export default function FloatingNav({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.3 }}
-            className='fixed top-[111px] left-[36%] z-[4000] w-fit -translate-x-1/2 rounded-b-3xl border border-zinc-600 bg-zinc-950 px-6 pt-3 pb-2 text-center text-white shadow-xl lg:left-[41%]'
+            className='fixed top-[13%] left-[31%] z-[4000] w-fit -translate-x-1/2 rounded-b-3xl border border-zinc-600 bg-zinc-950 px-6 pt-3 pb-2 text-center text-white shadow-xl lg:top-[111px] lg:left-[45%]'
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
