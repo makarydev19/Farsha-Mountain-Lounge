@@ -70,6 +70,7 @@ export default function AboutUsSection() {
                 zIndex: isCenterImage ? 100 : 100 - Math.abs(3 - idx),
                 transformStyle: 'preserve-3d'
               }}
+              loading='lazy'
               className='absolute h-32 w-28 rounded-lg object-cover shadow-xl lg:h-56 lg:w-52'
               initial={{
                 x: 0, // Centered horizontally

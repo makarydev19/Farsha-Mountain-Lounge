@@ -1,5 +1,6 @@
 'use client'
 
+import { TextAnimate } from '@/src/components/ui'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -90,9 +91,14 @@ const Hero = () => {
             priority
           />
         </div>
-        <h1 className='font-milky text-center text-5xl text-nowrap text-red-400 md:text-8xl'>
+        <TextAnimate
+          animation='fadeIn'
+          by='character'
+          delay={0.5}
+          className='font-milky text-center text-5xl text-nowrap text-red-400 md:text-8xl'
+        >
           Mountain Lounge
-        </h1>
+        </TextAnimate>
       </div>
     </section>
   )

@@ -24,8 +24,8 @@ export default function FloatingNav({
   const { scrollYProgress } = useScroll()
   const [visible, setVisible] = useState(false)
   const [showUserPanel, setShowUserPanel] = useState(false)
-  const { data: session } = useSession()
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const { data: session } = useSession()
 
   useMotionValueEvent(scrollYProgress, 'change', current => {
     if (typeof current === 'number') {
@@ -110,7 +110,7 @@ export default function FloatingNav({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.3 }}
-            className='fixed top-[13%] left-[31%] z-[4000] w-fit -translate-x-1/2 rounded-b-3xl border border-zinc-600 bg-zinc-950 px-6 pt-3 pb-2 text-center text-white shadow-xl lg:top-[111px] lg:left-[45%]'
+            className='fixed top-[14%] left-[31%] z-[4000] w-fit -translate-x-1/2 rounded-b-3xl border border-zinc-600 bg-zinc-950 px-6 pt-3 pb-2 text-center text-white shadow-xl lg:top-[111px] lg:left-[45%]'
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >

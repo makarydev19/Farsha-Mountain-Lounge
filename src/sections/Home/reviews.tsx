@@ -1,44 +1,43 @@
-'use client'
-
-import { ReviewsCards } from '@/src/components/ui'
 import React from 'react'
+import ApprovedReviews from '@/src/components/Reviews/ApprovedReviews'
+import ReviewForm from '@/src/components/Reviews/ReviewForm'
+import { TextAnimate } from '@/src/components/ui'
 
-export default function InfiniteMovingCardsDemo() {
+const reviews = () => {
   return (
-    <div className='relative flex h-[40rem] flex-col items-center justify-center overflow-hidden rounded-md antialiased'>
-      <ReviewsCards items={testimonials} direction='right' speed='slow' />
-    </div>
+    <section className='py-14 lg:py-28'>
+      <main>
+        <div className='relative z-10 mx-auto w-full space-y-3 text-center lg:w-[65%]'>
+          <h2 className='text-2xl font-semibold text-red-400 lg:text-3xl'>
+            Our Reviews
+          </h2>
+          <TextAnimate
+            className='font-milky text-3xl lg:text-5xl'
+            animation='blurInUp'
+            as={'h1'}
+            delay={0.5}
+          >
+            What our clients say
+          </TextAnimate>
+        </div>
+        <ApprovedReviews />
+        <div className='mb-6 px-5 text-center lg:px-20'>
+          <TextAnimate
+            className='font-milky text-3xl lg:text-5xl'
+            animation='blurInUp'
+            as={'h1'}
+            delay={0.5}
+          >
+            We&apos;d love your feedback!
+          </TextAnimate>
+          <p className='mx-auto max-w-md text-base text-gray-400'>
+            Your review helps others and helps us grow.
+          </p>
+        </div>
+        <ReviewForm />
+      </main>
+    </section>
   )
 }
 
-const testimonials = [
-  {
-    quote:
-      'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.',
-    name: 'Charles Dickens',
-    title: 'A Tale of Two Cities'
-  },
-  {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: 'William Shakespeare',
-    title: 'Hamlet'
-  },
-  {
-    quote: 'All that we see or seem is but a dream within a dream.',
-    name: 'Edgar Allan Poe',
-    title: 'A Dream Within a Dream'
-  },
-  {
-    quote:
-      'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.',
-    name: 'Jane Austen',
-    title: 'Pride and Prejudice'
-  },
-  {
-    quote:
-      'Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.',
-    name: 'Herman Melville',
-    title: 'Moby-Dick'
-  }
-]
+export default reviews

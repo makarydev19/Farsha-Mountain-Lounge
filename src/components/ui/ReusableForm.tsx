@@ -64,7 +64,7 @@ const ReusableForm = ({
                 onChange={e => handleChange(field.id, e.target.value)}
                 placeholder={field.placeholder}
                 required={field.required}
-                className='block w-full rounded-md border border-zinc-800 bg-zinc-900 px-4 py-4 text-white placeholder-gray-500 caret-red-500 transition-all duration-200 focus:border-red-400 focus:outline-none'
+                className='block w-full rounded-3xl border border-zinc-800 bg-zinc-900 px-4 pt-4 pb-10 text-white placeholder-gray-500 caret-red-500 transition-all duration-200 focus:border-red-400 focus:outline-none'
               />
             ) : (
               <input
@@ -74,7 +74,7 @@ const ReusableForm = ({
                 onChange={e => handleChange(field.id, e.target.value)}
                 placeholder={field.placeholder}
                 required={field.required}
-                className='block w-full rounded-md border border-zinc-800 bg-zinc-900 px-4 py-4 text-white placeholder-gray-500 caret-red-500 transition-all duration-200 focus:border-red-400 focus:outline-none'
+                className='block w-full rounded-3xl border border-zinc-800 bg-zinc-900 px-4 py-4 text-white placeholder-gray-500 caret-red-500 transition-all duration-200 focus:border-red-400 focus:outline-none'
               />
             )}
           </div>
@@ -83,7 +83,7 @@ const ReusableForm = ({
       <button
         type='submit'
         disabled={loading}
-        className={`font-milky w-full cursor-pointer rounded border border-black bg-red-400 py-4 text-2xl font-bold tracking-widest text-black transition hover:border-blue-100 hover:bg-black hover:text-white ${
+        className={`font-milky w-full cursor-pointer rounded-3xl border border-black bg-red-400 py-4 text-2xl font-bold tracking-widest text-black transition hover:border-blue-100 hover:bg-black hover:text-white ${
           loading ? 'cursor-not-allowed opacity-50' : ''
         }`}
       >

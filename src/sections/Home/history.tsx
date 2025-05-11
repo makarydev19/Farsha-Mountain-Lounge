@@ -52,6 +52,7 @@ export default function History() {
                       width={1000}
                       height={1000}
                       className='img rounded-lg'
+                      priority
                     />
                   </div>
                 </motion.div>

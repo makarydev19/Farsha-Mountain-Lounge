@@ -50,7 +50,7 @@ const Guidelines = () => {
   }, [inViewBeach, controlsBeachList])
 
   return (
-    <section className='guidelines section py-28'>
+    <section className='guidelines py-28'>
       <main className='space-y-10'>
         <div className='relative z-10 mx-auto w-full space-y-3 px-5 text-center lg:w-[65%]'>
           <h2 className='text-2xl font-semibold text-red-400 lg:text-3xl'>
