@@ -89,7 +89,7 @@ export default function FloatingNav({
             </div>
 
             <div className='flex items-center justify-end gap-5'>
-              <button className='relative rounded-3xl border border-neutral-200 px-4 py-2 text-base font-medium text-black dark:border-white/[0.2] dark:text-white'>
+              <button className='relative rounded-3xl border border-white/[0.2] px-4 py-2 text-base font-medium text-white'>
                 <Link href='/reservations'>
                   <span className='flex items-center gap-1'>
                     Reservation
@@ -110,7 +110,7 @@ export default function FloatingNav({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.3 }}
-            className='fixed top-[14%] left-[31%] z-[4000] w-fit -translate-x-1/2 rounded-b-3xl border border-zinc-600 bg-zinc-950 px-6 pt-3 pb-2 text-center text-white shadow-xl lg:top-[111px] lg:left-[45%]'
+            className='fixed top-[15%] left-[31%] z-[4000] w-fit -translate-x-1/2 rounded-b-3xl border border-zinc-600 bg-zinc-950 px-6 pt-3 pb-2 text-center text-white shadow-xl lg:top-[111px] lg:left-[45%]'
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
