@@ -3,9 +3,9 @@ import sanityClient from '@/src/libs/sanity'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
-  const { name, email, message } = await req.json()
+  const { name, message } = await req.json()
 
-  if (!name || !email || !message) {
+  if (!name || !message) {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
   }
 
