@@ -31,6 +31,12 @@ const review = defineType({
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
       readOnly: true
+    }),
+    defineField({
+      name: 'rating',
+      title: 'Rating',
+      type: 'number',
+      validation: Rule => Rule.required().min(1).max(5)
     })
   ]
 })

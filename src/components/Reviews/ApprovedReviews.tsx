@@ -6,7 +6,7 @@ export default async function ApprovedReviews() {
 
   return (
     <section className='relative flex h-[25rem] flex-col items-center justify-center overflow-hidden rounded-md antialiased lg:h-[30rem]'>
-      <InfiniteMovingCards items={reviews} direction='right' speed='slow' />
+      <InfiniteMovingCards items={reviews} direction='right' speed='normal' />
     </section>
   )
 }

@@ -27,7 +27,7 @@ export type HistoryData = {
 export type Field = {
   id: string
   label: string
-  placeholder: string
+  placeholder?: string
   type:
     | 'text'
     | 'textarea'
@@ -37,6 +37,7 @@ export type Field = {
     | 'time'
     | 'number'
     | 'password'
+    | 'rating'
   required?: boolean
 }
 

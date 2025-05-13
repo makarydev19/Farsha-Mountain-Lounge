@@ -14,6 +14,7 @@ export const InfiniteMovingCards = ({
     quote: string
     name: string
     title?: string
+    rating: number
   }[]
   direction?: 'left' | 'right'
   speed?: 'fast' | 'normal' | 'slow'
@@ -26,7 +27,9 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation()
   }, [])
+
   const [start, setStart] = useState(false)
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children)
@@ -43,32 +46,24 @@ export const InfiniteMovingCards = ({
       setStart(true)
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
-      if (direction === 'left') {
-        containerRef.current.style.setProperty(
-          '--animation-direction',
-          'forwards'
-        )
-      } else {
-        containerRef.current.style.setProperty(
-          '--animation-direction',
-          'reverse'
-        )
-      }
+      containerRef.current.style.setProperty(
+        '--animation-direction',
+        direction === 'left' ? 'forwards' : 'reverse'
+      )
     }
   }
+
   const getSpeed = () => {
     if (containerRef.current) {
-      if (speed === 'fast') {
-        containerRef.current.style.setProperty('--animation-duration', '20s')
-      } else if (speed === 'normal') {
-        containerRef.current.style.setProperty('--animation-duration', '40s')
-      } else {
-        containerRef.current.style.setProperty('--animation-duration', '80s')
-      }
+      const duration =
+        speed === 'fast' ? '20s' : speed === 'normal' ? '40s' : '80s'
+      containerRef.current.style.setProperty('--animation-duration', duration)
     }
   }
+
   return (
     <div
       ref={containerRef}
@@ -98,14 +93,26 @@ export const InfiniteMovingCards = ({
               <span className='relative z-20 line-clamp-6 text-sm leading-[1.6] font-normal text-gray-100'>
                 {item.quote}
               </span>
-              <div className='relative z-20 mt-6 flex flex-row items-center'>
+
+              {/* ⭐ Star Rating Display */}
+              <div className='relative z-20 mt-4 flex items-center gap-1'>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <span
+                    key={i}
+                    className={
+                      i < item.rating ? 'text-yellow-400' : 'text-zinc-600'
+                    }
+                  >
+                    ★
+                  </span>
+                ))}
+              </div>
+
+              <div className='relative z-20 mt-4 flex flex-row items-center'>
                 <span className='flex flex-col gap-1'>
                   <span className='text-sm leading-[1.6] font-normal text-gray-400'>
                     {item.name}
                   </span>
-                  {/* <span className='text-sm leading-[1.6] font-normal text-gray-400'>
-                    {item.title}
-                  </span> */}
                 </span>
               </div>
             </blockquote>

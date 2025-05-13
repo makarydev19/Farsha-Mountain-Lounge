@@ -3,6 +3,7 @@
 import { Field } from '@/types/types'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
+import StarRating from './StarRating' // <-- ADD THIS
 
 type ReusableFormProps = {
   fields: Field[]
@@ -65,6 +66,11 @@ const ReusableForm = ({
                 placeholder={field.placeholder}
                 required={field.required}
                 className='block w-full rounded-3xl border border-zinc-800 bg-zinc-900 px-4 pt-4 pb-10 text-white placeholder-gray-500 caret-red-500 transition-all duration-200 focus:border-red-400 focus:outline-none'
+              />
+            ) : field.type === 'rating' ? (
+              <StarRating
+                value={Number(values[field.id])}
+                onChange={val => handleChange(field.id, String(val))}
               />
             ) : (
               <input

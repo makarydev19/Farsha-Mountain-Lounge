@@ -12,6 +12,12 @@ const fields: Field[] = [
     required: true
   },
   {
+    id: 'rating',
+    label: 'Rating',
+    type: 'rating',
+    required: true
+  },
+  {
     id: 'name',
     label: 'Name',
     type: 'text',
