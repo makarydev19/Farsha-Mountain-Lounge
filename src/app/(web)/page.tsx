@@ -4,7 +4,8 @@ import {
   Hero,
   Services,
   History,
-  Reviews
+  Reviews,
+  Gallery
 } from '@/src/sections/Home'
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Services />
       <Guidelines />
       <Reviews />
+      <Gallery />
     </>
   )
 }

@@ -3,7 +3,7 @@
 import { Field } from '@/types/types'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
-import StarRating from './StarRating' // <-- ADD THIS
+import StarRating from './StarRating'
 
 type ReusableFormProps = {
   fields: Field[]
@@ -50,7 +50,14 @@ const ReusableForm = ({
   return (
     <form onSubmit={handleSubmit} className={className || 'space-y-4'}>
       {fields.map(field => (
-        <div key={field.id}>
+        <div
+          key={field.id}
+          className={
+            field.type === 'rating'
+              ? 'flex flex-col items-center text-center'
+              : ''
+          }
+        >
           <label
             htmlFor={field.id}
             className='text-base font-medium text-white dark:text-gray-100'

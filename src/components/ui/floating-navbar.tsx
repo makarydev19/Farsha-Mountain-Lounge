@@ -81,6 +81,7 @@ export default function FloatingNav({
                     width={50}
                     height={50}
                     className='img rounded-full'
+                    loading='eager'
                   />
                 ) : (
                   <FaUserCircle className='size-7 text-white' />

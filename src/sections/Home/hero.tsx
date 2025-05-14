@@ -32,6 +32,7 @@ const Hero = () => {
                 alt='Fallback'
                 fill
                 priority
+                loading='eager'
                 className='hidden rounded-b-4xl object-cover lg:block'
               />
               <Image
@@ -39,6 +40,7 @@ const Hero = () => {
                 alt='Fallback'
                 fill
                 priority
+                loading='eager'
                 className='block rounded-b-4xl object-cover lg:hidden'
               />
               <div className='absolute inset-0 z-20 flex items-center justify-center rounded-b-4xl bg-black/50'>
@@ -91,6 +93,7 @@ const Hero = () => {
               height={200}
               className='img'
               priority
+              loading='eager'
             />
           </div>
           <TextAnimate

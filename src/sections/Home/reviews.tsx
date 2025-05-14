@@ -5,7 +5,7 @@ import { TextAnimate } from '@/src/components/ui'
 
 const reviews = () => {
   return (
-    <section className='py-14 lg:py-32'>
+    <section className='py-14 lg:py-20'>
       <main>
         <div className='relative z-10 mx-auto w-full space-y-3 text-center lg:w-[65%]'>
           <h2 className='text-2xl font-semibold text-red-400 lg:text-3xl'>

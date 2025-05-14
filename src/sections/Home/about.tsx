@@ -7,13 +7,13 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const images = [
+  '/assets/gallery-12.jpg',
   '/assets/gallery-13.jpg',
   '/assets/IMG22.jpg',
-  '/assets/gallery-12.jpg',
   '/assets/gallery-5.jpg',
-  '/assets/farshaLounge8.jpg',
   '/assets/IMG11.jpg',
-  '/assets/farshaLounge6.jpg'
+  '/assets/farshaLounge6.jpg',
+  '/assets/farshaLounge8.jpg'
 ]
 
 export default function AboutUsSection() {
@@ -23,16 +23,16 @@ export default function AboutUsSection() {
 
   // Determine spacing based on screen width
   const xGap = width > 1024 ? 150 : width > 768 ? 100 : 60
-  const yCurve = width > 1024 ? 100 : width > 768 ? 70 : 40
+  const yCurve = width > 1024 ? 100 : width > 768 ? 70 : 110
 
   const positions = [
-    { x: -3 * xGap, y: -yCurve },
-    { x: -2 * xGap, y: -yCurve * 0.7 },
-    { x: -1 * xGap, y: -yCurve * 0.4 },
+    { x: -3 * xGap, y: -yCurve * 2.5 },
+    { x: -2 * xGap, y: -yCurve * 1.5 },
+    { x: -1 * xGap, y: -yCurve * 1 },
     { x: 0, y: 0 },
-    { x: 1 * xGap, y: -yCurve * 0.4 },
-    { x: 2 * xGap, y: -yCurve * 0.7 },
-    { x: 3 * xGap, y: -yCurve }
+    { x: 1 * xGap, y: -yCurve * 1 },
+    { x: 2 * xGap, y: -yCurve * 1.5 },
+    { x: 3 * xGap, y: -yCurve * 2.5 }
   ]
 
   return (
@@ -55,7 +55,7 @@ export default function AboutUsSection() {
 
       {/* Container to hold all images with 3D perspective */}
       <div
-        className='relative flex h-[300px] w-full items-center justify-center lg:h-[500px]'
+        className='relative flex h-[300px] w-full items-center justify-center pt-56 lg:h-[500px] lg:pt-0'
         style={{ perspective: '1000px' }}
       >
         {images.map((src, idx) => {
@@ -70,8 +70,8 @@ export default function AboutUsSection() {
                 zIndex: isCenterImage ? 100 : 100 - Math.abs(3 - idx),
                 transformStyle: 'preserve-3d'
               }}
-              loading='lazy'
-              className='absolute h-32 w-28 rounded-lg object-cover shadow-xl lg:h-56 lg:w-52'
+              loading='eager'
+              className='absolute h-40 w-36 rounded-lg object-cover shadow-xl lg:h-56 lg:w-52'
               initial={{
                 x: 0, // Centered horizontally
                 y: 0, // Centered vertically

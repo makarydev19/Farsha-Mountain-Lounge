@@ -17,6 +17,7 @@ export async function getApprovedReviewsQuery(): Promise<ReviewCardItem[]> {
 
   return reviews.map((review: Review) => ({
     quote: review.message,
-    name: review.name
+    name: review.name,
+    rating: review.rating
   }))
 }

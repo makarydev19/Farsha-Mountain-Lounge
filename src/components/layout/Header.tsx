@@ -12,6 +12,7 @@ const Header = () => {
             width={100}
             height={100}
             className='img'
+            loading='eager'
             priority
           />
         }

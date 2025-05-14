@@ -5,16 +5,15 @@ import ReusableForm from '../ui/ReusableForm'
 
 const fields: Field[] = [
   {
+    id: 'rating',
+    type: 'rating',
+    required: true
+  },
+  {
     id: 'message',
     label: 'Your Review',
     type: 'textarea',
     placeholder: 'Write your review here...',
-    required: true
-  },
-  {
-    id: 'rating',
-    label: 'Rating',
-    type: 'rating',
     required: true
   },
   {

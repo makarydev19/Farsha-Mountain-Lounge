@@ -68,17 +68,50 @@ export const guidelinesBeach: Guideline[] = [
 ]
 
 export const gallery: GalleryItem[] = [
-  { id: 1, img: '/assets/farshaimg.jpg' },
-  { id: 2, img: '/assets/farshaLounge7.jpg' },
-  { id: 3, img: '/assets/farshaimg3.jpg' },
-  { id: 4, img: '/assets/farshaimg4.jpg' },
-  { id: 5, img: '/assets/farshaLounge5.jpg' },
-  { id: 6, img: '/assets/farshaLounge2.jpg' },
-  { id: 7, img: '/assets/farshaLounge3.jpg' },
-  { id: 8, img: '/assets/farshaLounge6.jpg' },
-  { id: 9, img: '/assets/e7na asl el7akaya.jpg' },
-  { id: 10, img: '/assets/farshaLounge4.jpg' },
-  { id: 11, img: '/assets/beach6.jpg' }
+  {
+    image: '/assets/farshaLounge2.jpg',
+    className: 'absolute top-10 left-[20%] rotate-[-5deg]'
+  },
+  {
+    image: '/assets/farshaLounge3.jpg',
+    className: 'absolute top-12 left-[15%] rotate-[-8deg]'
+  },
+  {
+    image: '/assets/farshaLounge5.jpg',
+    className: 'absolute top-52 left-[320%] rotate-[-10deg]'
+  },
+  {
+    image: '/assets/farshaLounge8.jpg',
+    className: 'absolute top-48 left-[65%] rotate-[-12deg]'
+  },
+  {
+    image: '/assets/farshaLounge6.jpg',
+    className: 'absolute top-40 left-[10%] rotate-[-14deg]'
+  },
+  {
+    image: '/assets/farshaLounge1.jpg',
+    className: 'absolute top-36 left-[45%] rotate-[-7deg]'
+  },
+  {
+    image: '/assets/farshaLounge4.jpg',
+    className: 'absolute top-5 left-[40%] rotate-[8deg]'
+  },
+  {
+    image: '/assets/gallery-7.jpg',
+    className: 'absolute top-32 left-[55%] rotate-[10deg]'
+  },
+  {
+    image: '/assets/farshaimg3.jpg',
+    className: 'absolute top-20 right-[35%] rotate-[2deg]'
+  },
+  {
+    image: '/assets/farshaimg2.jpg',
+    className: 'absolute top-24 left-[45%] rotate-[-7deg]'
+  },
+  {
+    image: '/assets/farshaimg.jpg',
+    className: 'absolute top-8 left-[30%] rotate-[4deg]'
+  }
 ]
 
 export const historyData: HistoryData[] = [

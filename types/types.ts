@@ -14,8 +14,8 @@ export type Guideline = {
 }
 
 export type GalleryItem = {
-  id: number
-  img: string | StaticImageData
+  image: string | StaticImageData
+  className: string
 }
 
 export type HistoryData = {
@@ -26,7 +26,7 @@ export type HistoryData = {
 
 export type Field = {
   id: string
-  label: string
+  label?: string
   placeholder?: string
   type:
     | 'text'

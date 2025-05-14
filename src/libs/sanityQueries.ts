@@ -10,12 +10,12 @@ export const getUserDataQuery = groq`*[_type == 'user' && _id == $userId][0] {
     image,
 }`
 
-
 export const getApprovedReviewsQuery = groq`
   *[_type == "review" && approved == true] | order(_createdAt desc) {
     _id,
     name,
     message,
+    rating,
     createdAt
   }
 `
