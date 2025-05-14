@@ -4,6 +4,15 @@ import Header from '@/src/components/layout/Header'
 import Toast from '@/src/components/Toast/Toast'
 import './globals.css'
 
+export const metadata = {
+  title: 'Farsha Mountain Lounge',
+  description:
+    'Farsha brings you along a journey of original antique pieces collected in the years',
+  icons: {
+    icon: '/FarshaProfilePic.png'
+  }
+}
+
 export default function RootLayout({
   children
 }: Readonly<{
