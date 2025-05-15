@@ -15,6 +15,7 @@ const page = () => {
             width={1000}
             height={1000}
             priority
+            loading='eager'
           />
 
           {/* Overlay */}
