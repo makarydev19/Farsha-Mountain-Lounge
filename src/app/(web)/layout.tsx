@@ -2,8 +2,8 @@ import { NextAuthProvider } from '@/src/providers/AuthProvider'
 import Footer from '@/src/components/layout/Footer'
 import Header from '@/src/components/layout/Header'
 import Toast from '@/src/components/Toast/Toast'
-import { useViewportHeightFix } from '@/src/hooks/useViewportHeightFix'
 import './globals.css'
+import ViewportHeightFix from '@/src/components/ViewportHeight/ViewportHeightFix'
 
 export const metadata = {
   title: 'Farsha Mountain Lounge',
@@ -19,10 +19,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  useViewportHeightFix()
   return (
     <html lang='en'>
       <body className='body-bg font-normal antialiased'>
+        <ViewportHeightFix />
         <NextAuthProvider>
           <Toast />
           <main className='text-white'>
