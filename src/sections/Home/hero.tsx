@@ -63,7 +63,7 @@ const Hero = () => {
           loop
           playsInline
           preload='auto'
-          controls={false}
+          controls={true}
           onCanPlay={handleCanPlay}
           className={`block h-full w-full rounded-b-4xl object-cover lg:hidden ${
             videoReady ? 'opacity-100' : 'opacity-0'
