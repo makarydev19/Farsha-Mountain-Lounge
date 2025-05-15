@@ -32,22 +32,22 @@ const page = () => {
               Reservations
             </TextAnimate>
             <TextAnimate
-              className='font-milky pb-4 text-center text-4xl font-bold text-blue-100 md:text-7xl'
               animation='blurIn'
               by='character'
               duration={1}
               delay={1}
+              className='font-milky text-center text-5xl text-nowrap text-blue-300 md:text-8xl'
             >
-              Coming Soon
+              Beach Lounge
             </TextAnimate>
             <TextAnimate
+              className='font-milky pb-4 text-center text-3xl font-bold text-blue-100 md:text-4xl'
               animation='blurIn'
               by='character'
               duration={1}
               delay={1.5}
-              className='font-milky text-center text-5xl text-nowrap text-blue-300 md:text-8xl'
             >
-              Beach Lounge
+              Coming Soon
             </TextAnimate>
           </div>
         </div>
