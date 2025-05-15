@@ -74,6 +74,10 @@ body {
   background-size: 53px 53px;
 }
 
+.full-mobile-screen {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 .img {
   @apply h-full w-full object-cover;
 }
