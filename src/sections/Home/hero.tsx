@@ -1,8 +1,8 @@
 'use client'
 
-import { TextAnimate } from '@/src/components/ui'
 import Image from 'next/image'
 import { useState } from 'react'
+import { TextAnimate } from '@/src/components/ui'
 
 const Hero = () => {
   const [videoReady, setVideoReady] = useState(false)
@@ -11,7 +11,7 @@ const Hero = () => {
 
   return (
     <section className='relative h-screen w-full'>
-      {/* Background Video or Fallback */}
+      {/* Fallback image while video is loading */}
       <div className='absolute inset-0 z-0'>
         {!videoReady && (
           <>
@@ -39,12 +39,10 @@ const Hero = () => {
           </>
         )}
 
-        {/* Overlay gradient */}
         <div className='absolute inset-0 z-10 rounded-b-4xl bg-gradient-to-t from-black/50 via-black/10 to-transparent' />
 
-        {/* Videos */}
         <video
-          src='https://res.cloudinary.com/dfksduzaw/video/upload/f_auto,q_auto/v1746797930/FarshaHori_vokvzp.mp4'
+          src='/videos/FarshaHori.mp4'
           autoPlay
           muted
           loop
@@ -57,13 +55,13 @@ const Hero = () => {
           } transition-opacity duration-700`}
         />
         <video
-          src='https://res.cloudinary.com/dfksduzaw/video/upload/f_auto,q_auto/v1746798444/FarshaVer_eslr9x.mp4'
+          src='/videos/FarshaVer.mp4'
           autoPlay
           muted
           loop
           playsInline
           preload='auto'
-          controls={true}
+          controls={false}
           onCanPlay={handleCanPlay}
           className={`block h-full w-full rounded-b-4xl object-cover lg:hidden ${
             videoReady ? 'opacity-100' : 'opacity-0'
@@ -71,7 +69,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Foreground Content */}
+      {/* Foreground content */}
       <div className='relative z-30 flex h-full w-full flex-col items-center justify-end pb-32 text-white lg:pb-14'>
         <div className='relative top-1 w-52 lg:top-2 lg:w-72'>
           <Image
