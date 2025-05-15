@@ -14,7 +14,7 @@ export default function StarRating({ value, onChange }: StarRatingProps) {
           key={star}
           type='button'
           onClick={() => onChange(star)}
-          className={`text-4xl ${value >= star ? 'text-yellow-400' : 'text-gray-400'}`}
+          className={`cursor-pointer text-4xl ${value >= star ? 'text-yellow-400' : 'text-gray-400'}`}
         >
           ★
         </button>

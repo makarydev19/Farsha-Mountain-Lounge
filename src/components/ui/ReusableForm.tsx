@@ -33,8 +33,15 @@ const ReusableForm = ({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setLoading(true)
 
+    // Validate required fields
+    const missing = fields.find(field => field.required && !values[field.id])
+    if (missing) {
+      toast.error(`Please fill in the ${missing.label || missing.id} field.`)
+      return
+    }
+
+    setLoading(true)
     try {
       await onSubmit(values)
       toast.success(successMessage)
