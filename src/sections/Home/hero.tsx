@@ -13,11 +13,16 @@ const Hero = () => {
   return (
     <>
       <Head>
-        {/* Preload hint for faster video loading */}
         <link
           rel='preload'
           as='video'
           href='https://res.cloudinary.com/dfksduzaw/video/upload/v1746797930/FarshaHori_vokvzp.mp4'
+          type='video/mp4'
+        />
+        <link
+          rel='preload'
+          as='video'
+          href='https://res.cloudinary.com/dfksduzaw/video/upload/v1746798444/FarshaVer_eslr9x.mp4'
           type='video/mp4'
         />
       </Head>
