@@ -21,10 +21,10 @@ const Footer = () => {
     }
 
     await emailjs.send(
-      'service_farsha',
-      'template_farsha',
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
       templateParams,
-      'Z9gvpMaOGrk9N-kE'
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
     )
   }
 
